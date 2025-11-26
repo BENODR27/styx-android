@@ -33,7 +33,9 @@ class _WebViewPageState extends State<WebViewPage> {
     super.initState();
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadRequest(Uri.parse("https://www.srtemplejewellery.com")); // ← put your website URL here
+      ..loadRequest(
+        Uri.parse("https://www.srtemplejewellery.com"),
+      ); // ← put your website URL here
   }
 
   @override
@@ -42,7 +44,7 @@ class _WebViewPageState extends State<WebViewPage> {
       // appBar: AppBar(
       //   title: const Text("SRT"),
       // ),
-      body: WebViewWidget(controller: controller),
+      body: SafeArea(child: WebViewWidget(controller: controller)),
     );
   }
 }
